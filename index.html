@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>goit-js-hw-03</title>
+    <script src="./js/task-1.js" defer></script>
+    <script src="./js/task-2.js" defer></script>
+    <script src="./js/task-3.js" defer></script>
+
+</head>
+<body>
+      <h1>HAPPY EASTER</h1>
+
+    <canvas id="easterEggCanvas" width="400" height="600"></canvas>
+    <script>
+        const canvas = document.getElementById('easterEggCanvas');
+        const ctx = canvas.getContext('2d');
+
+        function drawEgg() {
+            // Малювання овальної форми писанки
+            ctx.beginPath();
+            ctx.ellipse(200, 300, 120, 160, 0, 0, Math.PI * 2);
+            ctx.fillStyle = '#FFCC66'; // Колір основи писанки
+            ctx.fill();
+            ctx.strokeStyle = '#AA5500';
+            ctx.lineWidth = 5;
+            ctx.stroke();
+
+            // Додання горизонтальних ліній
+            ctx.beginPath();
+            ctx.moveTo(80, 250);
+            ctx.lineTo(320, 250);
+            ctx.moveTo(80, 300);
+            ctx.lineTo(320, 300);
+            ctx.moveTo(80, 350);
+            ctx.lineTo(320, 350);
+            ctx.strokeStyle = '#FF6666';
+            ctx.lineWidth = 3;
+            ctx.stroke();
+
+            // Декоративні елементи (кола)
+            for (let i = 100; i <= 300; i += 50) {
+                ctx.beginPath();
+                ctx.arc(i, 300, 10, 0, Math.PI * 2);
+                ctx.fillStyle = '#66CCFF';
+                ctx.fill();
+            }
+        }
+
+        // Виклик функції малювання
+        drawEgg();
+    </script>
+
+
+
+    
+</body>
+</html>
